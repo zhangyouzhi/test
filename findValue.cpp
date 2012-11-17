@@ -59,6 +59,5 @@ int main(int argc, char **argv)
         printf("No result fould\n");
     }
     
-    getchar();
     return 0; 
 }
