@@ -77,5 +77,4 @@ int main(int argc, char **argv)
     printf("Missin unsorted number %d\n", findMissingUnsorted(unsorted, 6));
    
     return 0;
-
 }
