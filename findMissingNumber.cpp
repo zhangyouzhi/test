@@ -54,7 +54,7 @@ int findMissingUnsorted(int *array, int N)
     int xorValue=0;
     int index;
     
-    if(array == NULL||N<0)
+    if(array==NULL || N<0)
     {
         return -1;
     }
@@ -68,13 +68,13 @@ int findMissingUnsorted(int *array, int N)
 } 
 
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     int sorted[]={0,1,2,4,5,6};
     int unsorted[]={6,2,4,1,5,0};
     
-    printf("Missin sorted number %d\n", findMissingSorted(sorted, 6));
-    printf("Missin unsorted number %d\n", findMissingUnsorted(unsorted, 6));
-   
+    printf("Missing sorted number %d\n", findMissingSorted(sorted, 6));
+    printf("Missing unsorted number %d\n", findMissingUnsorted(unsorted, 6));
+
     return 0;
 }

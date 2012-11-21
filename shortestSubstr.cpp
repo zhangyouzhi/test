@@ -132,7 +132,7 @@ char* shortestSubstr(char *src, const char *target)
     return cur;
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {   
     char src[]="aaaaaaaaaacbebbbbbdddddddcccccc";
     char target[]="abcd"; 

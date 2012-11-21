@@ -18,9 +18,9 @@
 
 void swap(char *p, char*q)
 {
-     *p=*p^*q;
-     *q=*p^*q;
-     *p=*p^*q;
+     *p^=*q;
+     *q^=*p;
+     *p^=*q;
 }
 
 void reverse(char *begin, char *end)
@@ -71,8 +71,7 @@ bool nextOne(char *brackets, int len)
 bool validMatch(char *brackets, int len)
 {
     char *cur=brackets;
-    int left=0;
-    int right=0;
+    int count=0;
 
     if (brackets == NULL || len <=0)
     {
@@ -81,17 +80,17 @@ bool validMatch(char *brackets, int len)
    
     while(len--)
     {
-        if(left<right)
+        if(count<0)
         {
             return false;
         }
         if(*cur=='{')
         {
-            left++;
+            count++;
         }
         else
         {
-            right++;
+            count--;
         }
         cur++;
     }
@@ -136,11 +135,11 @@ void bracketMatch(char *brackets)
      }    
 }
 
-int main(int argc, int **argv)
+int main(int argc, int *argv[])
 {
     char brackets[]="{{{}}}";
     
     bracketMatch(brackets);  
-    
+
     return 0;
 }

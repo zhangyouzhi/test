@@ -20,24 +20,24 @@ bool findValue(int *matrix, int m, int n, int value, int &row, int &col)
     col = n-1;  
     while(row <= m-1 && col >= 0) 
     {  
-        if(*(matrix+row*n+col) == value)  
-        { 
-            return true; 
-        } 
-        else if(*(matrix+row*n+col) > value) 
+        if(*(matrix+row*n+col) > value) 
         { 
             col--;
         }  
-        else
+        else if(*(matrix+row*n+col) < value) 
         {  
             row++;
-        }  
+        } 
+        else
+        {
+            return true;
+        } 
      }
      
      return false;  
 }   
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     int row, col; 
     bool ret; 
@@ -58,6 +58,6 @@ int main(int argc, char **argv)
     {
         printf("No result fould\n");
     }
-    
+
     return 0; 
 }
